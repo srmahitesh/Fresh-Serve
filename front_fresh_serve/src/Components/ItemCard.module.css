@@ -1,0 +1,8 @@
+.noUnderline {
+  text-decoration: none;  /* Removes underline */
+  color: inherit; /* Keeps text color same as parent */
+}
+
+.noUnderline:hover {
+  text-decoration: none; /* Ensures underline does not appear on hover */
+}
