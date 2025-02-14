@@ -15,7 +15,7 @@ const ItemsProvider = ({children}) =>{
   const fetchItems = async()=>{
     setFetching(true);
     try{
-      let result = await fetch(`http://localhost:4000/get_items`);
+      let result = await fetch(`https://backend-freshserve.onrender.com/get_items`);
       let temp = await result.json();
       console.log(temp);
       setItems(temp);

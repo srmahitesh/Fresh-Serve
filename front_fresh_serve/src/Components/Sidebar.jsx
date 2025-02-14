@@ -3,6 +3,7 @@ import styles from './Sidebar.module.css'
 import { itemsContext } from '../Store/Context-store';
 import { Link } from 'react-router-dom';
 import { loginContext } from '../Store/Login-Context';
+import { Button } from 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 
@@ -64,7 +65,7 @@ const Sidebar = () => {
           </li>
         </ul>
 
-        {isLoggedIn && <div className="dropdown border-top">
+        {isLoggedIn ? <div className="dropdown border-top">
           <a href="#" className="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
             <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" className="rounded-circle" />
           </a>
@@ -74,7 +75,7 @@ const Sidebar = () => {
             <li><hr className="dropdown-divider" /></li>
             <li><a className="dropdown-item" href="#">Sign out</a></li>
           </ul>
-        </div>}
+        </div> : <a href='/login'><button>Login</button></a>}
       </div>
     </div>
   );

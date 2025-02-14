@@ -6,6 +6,7 @@ import ItemsProvider from "./Store/Context-store";
 import CartContextProvider from "./Store/Cart-store";
 import Product_Detailed from "./Components/Product_Detailed";
 import LoginContextProvider from "./Store/Login-Context";
+import LoginPage from "./Components/LoginPage";
 
 function App() {
   return (
