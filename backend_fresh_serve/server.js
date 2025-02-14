@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import bcrypt from "bcrypt"
 import session from "express-session";
 import passport from "passport";
-import { Strategy } from "passport-local";
+import LocalStrategy from "passport-local";
 import { configDotenv } from "dotenv";
 configDotenv();
 
@@ -97,16 +97,21 @@ App.post('/newUser', async(req, res)=>{
 });
 
 
+App.post("/login", passport.authenticate('local'), (req, res)=>{
+  res.send(`SUCCESS`);
+})
+
+
 
 passport.use(
-  new Strategy(
+  new LocalStrategy(
     { usernameField: "email", passwordField: "password", passReqToCallback: true }, 
     async (req, username, password, done) => {
       try {
         const conn = await activateDb(); // Activate DB Connection
         try {
           const [rows] = await conn.query(
-            `SELECT email, password FROM studentCred WHERE email = ?`, 
+            `SELECT email, password FROM customerCred WHERE email = ?`, 
             [username]
           );
 
@@ -125,7 +130,7 @@ passport.use(
         } catch (error) {
           return done(error);
         } finally {
-          conn.release(); // Release DB connection
+          conn.close();
         }
       } catch (error) {
         console.log(`Error connecting to DB`, error);
@@ -144,7 +149,7 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser(async (email, done) => {
   try {
     const conn = await activateDb();
-    const [rows] = await conn.query(`SELECT email FROM studentCred WHERE email = ?`, [email]);
+    const [rows] = await conn.query(`SELECT email FROM customerCred WHERE email = ?`, [email]);
 
     if (rows.length === 0) {
       return done(null, false);
