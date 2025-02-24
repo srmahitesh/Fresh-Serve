@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import mysql from "mysql2/promise";
 import bodyParser from "body-parser";
-import bcrypt from "bcrypt"
+import bcryptjs from "bcryptjs"
 import Jwt from "jsonwebtoken";
 import { configDotenv } from "dotenv";
 configDotenv();
@@ -11,7 +11,7 @@ configDotenv();
 
 const App = express();
 const PORT = process.env.PORT;
-const saltRounds = await bcrypt.genSalt(10);
+const saltRounds = await bcryptjs.genSalt(10);
 
 
 
@@ -61,7 +61,7 @@ App.post('/newUser', async(req, res)=>{
 
   let {email, name, password} = req.body;
   if(!email || !name || !password) return res.send(`Please enter all required details`);
-  let hashedPass = await bcrypt.hash(password, saltRounds);
+  let hashedPass = await bcryptjs.hash(password, saltRounds);
   //first of all duplicate user check by mobile number & email
   let conn;
   try{
@@ -108,7 +108,7 @@ App.post("/login", async(req, res)=>{
       
       if(result[0].length === 0) res.json({msg: `User not found, Signup if you don't have any account.`});
 
-      const match = await bcrypt.compare(password, result[0].password);
+      const match = await bcryptjs.compare(password, result[0].password);
       if(!match) return res.json({msg: `Incorrect Password, Please Enter Correct One.`});
 
       //now create token and return that token
