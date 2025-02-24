@@ -10,7 +10,13 @@ import { Button } from 'bootstrap/dist/js/bootstrap.bundle.min';
 const Sidebar = () => {
   
   let {page, setPage} = useContext(itemsContext);
-  let {isLoggedIn} = useContext(loginContext);
+  let {userData, setUserData} = useContext(loginContext);
+
+  const handleLogout = () => {
+    setUserData({});
+    localStorage.removeItem("userData");
+  };
+  
 
   return (
     <div className={`${styles.sidebar_container}`}>
@@ -65,7 +71,9 @@ const Sidebar = () => {
           </li>
         </ul>
 
-        {isLoggedIn ? <div className="dropdown border-top">
+
+
+          {userData.email ? <div className="dropdown border-top">
           <a href="#" className="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
             <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" className="rounded-circle" />
           </a>
@@ -73,13 +81,25 @@ const Sidebar = () => {
             <li><a className="dropdown-item" href="#">Orders</a></li>
             <li><a className="dropdown-item" href="#">Profile</a></li>
             <li><hr className="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="#">Sign out</a></li>
+            <li onClick={()=>handleLogout}>Sign out</li>
           </ul>
-        </div> : <a href='/login'><button>Login</button></a>}
+        </div>
+
+        :
+
+        <div className="dropdown border-top">
+          <a href="#" className="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+            <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" className="rounded-circle" />
+          </a>
+          <ul className="dropdown-menu text-small shadow">
+            <li><a className="dropdown-item" href="/login">Login</a></li>
+          </ul>
+        </div>
+        }
+
       </div>
     </div>
   );
 };
-
 
 export default Sidebar;

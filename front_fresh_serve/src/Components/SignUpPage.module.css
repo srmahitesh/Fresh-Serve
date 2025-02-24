@@ -1,0 +1,25 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of viewport */
+}
+
+.form {
+  width: 300px; /* Reduce form width */
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form input {
+  font-size: 14px;
+  padding: 6px;
+  height: 32px; /* Reduce input field height */
+}
+
+.form button {
+  width: 100%;
+  margin-top: 10px;
+}

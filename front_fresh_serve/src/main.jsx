@@ -10,6 +10,7 @@ import ItemsList from './Components/ItemsList.jsx';
 import SlideShow from './Components/SlideShow.jsx';
 import Product_Detailed from './Components/Product_Detailed.jsx';
 import LoginPage from './Components/LoginPage.jsx';
+import SignUpPage from './Components/SignUpPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
         ]
       },
       {path: 'product/:productId', element: <Product_Detailed/>},
-      {path: 'login', element: <LoginPage/>}
+      {path: 'login', element: <LoginPage/>},
+      {path: 'signup', element: <SignUpPage/>}
     ],
   },
 ]);

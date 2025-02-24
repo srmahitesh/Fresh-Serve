@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import CartLogo from "./CartLogo";
 import { Link } from "react-router-dom";
 
+
 const Header = () => {
   const [location, setLocation] = useState("");
   const [fetching, setFetching] = useState(false);
@@ -59,7 +60,7 @@ const Header = () => {
         {/* Location Selection */}
         <div className={styles.locationContainer}>
         <b><i>Delivery in 30 Minutes</i></b>
-          <p className={styles.locationText}>{fetching ? "Fetching location..." : location}</p>
+          <p className={styles.locationText}>{fetching ? "Fetching location..." : location.substring(0, 20)}</p>
 
           <select
             name="location"
