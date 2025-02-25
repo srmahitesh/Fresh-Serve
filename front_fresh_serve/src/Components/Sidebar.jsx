@@ -81,7 +81,7 @@ const Sidebar = () => {
             <li><a className="dropdown-item" href="#">Orders</a></li>
             <li><a className="dropdown-item" href="#">Profile</a></li>
             <li><hr className="dropdown-divider" /></li>
-            <li><button onclick = {handleLogout}>Sign Out</button>button></li>
+            <li><button onClick = {handleLogout}>Sign Out</button></li>
           </ul>
         </div>
 
