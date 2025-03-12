@@ -1,0 +1,82 @@
+.orderContainer {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.status {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+.status.Successful {
+  color: green;
+}
+
+.status.PENDING {
+  color: orange;
+}
+
+.orderDate {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.section {
+  background: #f8f8f8;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  font-size: 14px;
+  padding: 6px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.amount {
+  float: right;
+}
+
+.discount {
+  color: red;
+}
+
+.total {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  border-top: 2px solid #ddd;
+  padding-top: 10px;
+}

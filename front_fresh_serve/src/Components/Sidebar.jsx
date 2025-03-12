@@ -13,6 +13,7 @@ const Sidebar = () => {
   let {userData, setUserData} = useContext(loginContext);
 
   const handleLogout = () => {
+    console.log(userData);
     setUserData({});
     localStorage.removeItem("userData");
   };
@@ -78,10 +79,9 @@ const Sidebar = () => {
             <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" className="rounded-circle" />
           </a>
           <ul className="dropdown-menu text-small shadow">
-            <li><a className="dropdown-item" href="#">Orders</a></li>
-            <li><a className="dropdown-item" href="#">Profile</a></li>
-            <li><hr className="dropdown-divider" /></li>
-            <li onClick={()=>handleLogout}>Sign out</li>
+            <li><a className="dropdown-item" href="/myorders">Orders</a></li>
+            <li><a className="dropdown-item" href="/address">Address</a></li>
+            <li><a className="dropdown-item" onClick={handleLogout}>Sign Out</a></li>
           </ul>
         </div>
 

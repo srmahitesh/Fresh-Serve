@@ -34,8 +34,12 @@ const ItemCard = ({item})=>{
   <div className="card-body" key={item.id}>
     <h5 className="card-title">{item.name}</h5>
     <h6 className="card-text">Net Qty: {item.units}</h6>
+
+    {item.curr_price === item.mrp ? <p>₹{item.curr_price}</p>
+    : <>
     <p >₹{item.curr_price} <span style={{ fontSize: 'medium', color: 'green' }}>{off}% Off</span> </p>
-    <p style={{fontSize: "medium"}}><del>₹{item.mrp}</del></p>
+    <p style={{fontSize: "medium"}}><del>₹{item.mrp}</del></p> </>
+    }
 
 
       {cartMap.has(item.id) ? (

@@ -6,6 +6,7 @@ import ItemsProvider from "./Store/Context-store";
 import CartContextProvider from "./Store/Cart-store";
 import Product_Detailed from "./Components/Product_Detailed";
 import LoginContextProvider from "./Store/Login-Context";
+import AddressProvider from "./Store/Address-store";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
     <LoginContextProvider>
     <CartContextProvider>
       <ItemsProvider>
+        <AddressProvider>
         <div className="app-container">
           <Sidebar />
           <div className="main-content">
@@ -23,6 +25,7 @@ function App() {
 
           </div>
         </div>
+        </AddressProvider>
       </ItemsProvider>
     </CartContextProvider>
     </LoginContextProvider>

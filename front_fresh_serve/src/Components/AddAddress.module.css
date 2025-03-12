@@ -1,0 +1,56 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.formLabel {
+  font-weight: bold;
+  color: #444;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.getLocationBtn {
+  background-color: #6c757d;
+  color: white;
+  margin-top: 5px;
+}
+
+.getLocationBtn:hover {
+  background-color: #5a6268;
+}
+
+.submitBtn {
+  background-color: #007bff;
+  color: white;
+  margin-top: 10px;
+}
+
+.submitBtn:hover {
+  background-color: #0056b3;
+}
