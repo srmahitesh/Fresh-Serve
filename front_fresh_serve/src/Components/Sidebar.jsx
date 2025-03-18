@@ -13,7 +13,7 @@ const Sidebar = () => {
   let {userData, setUserData} = useContext(loginContext);
 
   const handleLogout = () => {
-    console.log(userData);
+    // console.log(userData);
     setUserData({});
     localStorage.removeItem("userData");
   };

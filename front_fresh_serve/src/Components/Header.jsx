@@ -31,7 +31,7 @@ const Header = () => {
   // Fetch address from Ola Maps API
   const fetchAddress = async (latitude, longitude) => {
     try {
-      console.log(import.meta.env.VITE_OLA_API_KEY);
+
       const response = await fetch(
         `https://api.olamaps.io/places/v1/reverse-geocode?latlng=${latitude},${longitude}&api_key=${import.meta.env.VITE_OLA_API_KEY}`
       );

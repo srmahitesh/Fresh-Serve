@@ -17,11 +17,11 @@ const ItemsProvider = ({children}) =>{
     try{
       let result = await fetch(`https://backend-freshserve.onrender.com/get_items`);
       let temp = await result.json();
-      console.log(temp);
+      //console.log(temp);
       setItems(temp);
     }
     catch(error){
-      console.log(`Something went wrong`);
+      //console.log(`Something went wrong`);
     }
     finally{
       setFetching(false);

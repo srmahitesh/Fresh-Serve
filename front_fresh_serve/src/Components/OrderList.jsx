@@ -34,14 +34,14 @@ const OrderList = () => {
 
       let data = await result.json();
       if(data.msg === `Success`){
-        console.log(data.result);
+        //console.log(data.result);
         setOrderListArray(data.result);
       }
       else{
         setMsg(data.msg);
       }
     } catch (error) {
-      console.log(error.stack);
+      //console.log(error.stack);
     }
   };
 

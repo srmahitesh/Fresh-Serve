@@ -56,7 +56,7 @@ const CartContextProvider = ({ children }) => {
       storedCartList = parsedData;
     }
   } catch (e) {
-    console.error("Error parsing stored cart data", e);
+    //console.error("Error parsing stored cart data", e);
   }
 
   // Rebuild cartMap from storedCartList

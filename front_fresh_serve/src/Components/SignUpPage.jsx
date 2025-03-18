@@ -22,7 +22,7 @@ const SignUpPage = () => {
       password: password,
       email: email,
     }; ///object to be sent to backend
-    console.log(credentials);
+    // console.log(credentials);
 
     try{
       const result = await fetch(`https://backend-freshserve.onrender.com/newUser`, {
@@ -34,7 +34,7 @@ const SignUpPage = () => {
       });
 
       const data = await result.json();
-      console.log(data.msg);
+      //console.log(data.msg);
 
       if(data.msg === `Success`){
         setError(`Registration Successful, Redirecting to Login Page in 2 Seconds`);
@@ -47,7 +47,7 @@ const SignUpPage = () => {
       }
     }
     catch(error){
-      console.log(`Error while Saving user ${error.stack}`);
+      //console.log(`Error while Saving user ${error.stack}`);
     }
   }
 

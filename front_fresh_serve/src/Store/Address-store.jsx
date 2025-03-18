@@ -23,10 +23,10 @@ const AddressProvider = ({children})=>{
       result = await result.json();
 
       setAddress(result);
-      console.log(address);
+      //console.log(address);
       
     } catch (error) {
-      console.error("Error fetching addresses:", error);
+      //console.error("Error fetching addresses:", error);
     }
   };
 

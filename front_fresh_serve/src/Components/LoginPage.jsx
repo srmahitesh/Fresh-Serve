@@ -8,9 +8,9 @@ const LoginPage = ()=>{
   let {setUserData, userData} = useContext(loginContext);
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    console.log(userData)
-  }, [userData]);
+  // useEffect(()=>{
+  //   console.log(userData)
+  // }, [userData]);
 
 
   let email = useRef();
@@ -57,7 +57,7 @@ const LoginPage = ()=>{
       }
     }
     catch(error){
-      console.log("Error while initiating authentication" + error.stack);
+      //console.log("Error while initiating authentication" + error.stack);
     }
   };
 

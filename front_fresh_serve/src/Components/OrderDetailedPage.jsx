@@ -7,7 +7,7 @@ const OrderDetailedPage = ({ order }) => {
   const orderDate = new Date(parseInt(order.order_id.slice(2))).toLocaleString();
   const {address} = useContext(addressContext);
 
-  console.log(JSON.stringify(address));
+  // console.log(JSON.stringify(address));
   let currAddress;
   for(let i = 0; i < address.length; i++){
     if(address[i].add_id === order.address_id){

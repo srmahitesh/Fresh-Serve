@@ -27,7 +27,7 @@ const CartLogo = () => {
       };
       tempCart.push(itemObj);
     });
-    console.log(tempCart);
+    //console.log(tempCart);
   
     try {
       let response = await fetch("https://backend-freshserve.onrender.com/create-order", {
@@ -39,13 +39,13 @@ const CartLogo = () => {
       let data = await response.json();
   
       if (data.success) {
-        console.log("Order Created:", data.order);
+        //console.log("Order Created:", data.order);
         openRazorpay(data.order);
       } else {
         alert("Failed to create order");
       }
     } catch (error) {
-      console.error("Checkout Error:", error);
+      //console.error("Checkout Error:", error);
     }
   };
   
@@ -58,7 +58,7 @@ const CartLogo = () => {
       name: "Fresh Serve",
       description: "Test Transaction",
       handler: async function (response) {
-        console.log("Payment Successful:", response);
+        //console.log("Payment Successful:", response);
   
         let verifyRes = await fetch("https://backend-freshserve.onrender.com/verify-payment", {
           method: "POST",
@@ -69,7 +69,8 @@ const CartLogo = () => {
         let verifyData = await verifyRes.json();
   
         if (verifyData.success) {
-          alert("Payment Verified!");
+          alert("Payment Verified!, GO to Order to Track your order.");
+          localStorage.removeItem(Cart_Data);
         } else {
           alert("Payment Verification Failed!");
         }
@@ -90,9 +91,9 @@ const CartLogo = () => {
         }
       },
       prefill: {
-        name: "Hitesh Sharma",
-        email: "kashyaphitesh456@gmail.com",
-        contact: "9816567367",
+        // name: "Hitesh Sharma",
+        // email: "kashyaphitesh456@gmail.com",
+        // contact: "9816567367",
       },
     };
   

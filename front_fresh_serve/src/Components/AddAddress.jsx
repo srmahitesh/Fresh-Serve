@@ -54,7 +54,7 @@ const AddAddress = ({ fetchAddresses }) => {
       setGpsAddress("");
       setPhone("");
     } catch (error) {
-      console.error("Unable to add address now:", error);
+      //console.error("Unable to add address now:", error);
     }
   };
 
@@ -62,7 +62,7 @@ const AddAddress = ({ fetchAddresses }) => {
     try {
       const apiKey = import.meta.env.VITE_OLA_API_KEY;
       if (!apiKey) {
-        console.error("Ola API key is missing");
+        //console.error("Ola API key is missing");
         return;
       }
 
@@ -77,7 +77,7 @@ const AddAddress = ({ fetchAddresses }) => {
         setGpsAddress("Location not found");
       }
     } catch (error) {
-      console.error("Error fetching address:", error);
+      //console.error("Error fetching address:", error);
       setGpsAddress("Error fetching location");
     }
   };
@@ -97,7 +97,7 @@ const AddAddress = ({ fetchAddresses }) => {
           setFetching(false);
         },
         (error) => {
-          console.error("Error fetching geolocation:", error);
+          // console.error("Error fetching geolocation:", error);
           setFetching(false);
         }
       );
