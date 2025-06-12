@@ -7,8 +7,15 @@ import { addressContext } from "../Store/Address-store";
 
 const Address = () => {
   const { userData } = useContext(loginContext);
-  let {address, setAddress, fetchAddresses} = useContext(addressContext);
+  const { address, setAddress, fetchAddresses } = useContext(addressContext);
+  const navigate = useNavigate();
 
+  // Redirect if user not logged in
+  useEffect(() => {
+    if (!userData || !userData.token) {
+      navigate("/login");
+    }
+  }, [userData, navigate]);
 
   return (
     <div className={styles.container}>
@@ -25,7 +32,7 @@ const Address = () => {
       ))}
 
       <div className={styles.addAddress}>
-        <AddAddress fetchAddresses = {fetchAddresses}/>
+        <AddAddress fetchAddresses={fetchAddresses} />
       </div>
     </div>
   );
