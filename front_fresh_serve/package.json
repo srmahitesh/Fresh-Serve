@@ -7,17 +7,16 @@
     "start": "vite dev",
     "dev": "vite",
     "build": "vite build",
-    "build-with-legacy": "npm install --legacy-peer-deps && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "postinstall": "vite build"
   },
   "dependencies": {
-    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.3",
     "bootstrap": "^5.3.4",
-    "react": "^18.3.2",
+    "react": "^18.2.0", // Updated version
     "react-bootstrap": "^2.10.10",
-    "react-dom": "^18.3.2",
+    "react-dom": "^18.2.0", // Ensure this matches the react version
     "react-icons": "^5.4.1",
     "react-router-dom": "^7.1.6",
     "tailwindcss": "^4.0.7"
