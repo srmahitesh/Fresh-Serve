@@ -5,7 +5,7 @@ export const cartContext = createContext();
 function reducer(state, action) {
   let newCartList = [...state.cartList];
   let newCartMap = new Map(state.cartMap);
-  let { item, prevQuantity } = action.payload;
+  let { item, prevQuantity } = action.payload || {};
 
   if (action.type === "Increase") {
     let present = false;
@@ -37,12 +37,17 @@ function reducer(state, action) {
         break;
       }
     }
+  } else if (action.type === "Clear") {
+    newCartList = [];
+    newCartMap = new Map();
   }
 
-  // Persist only the cartList in localStorage
+  // Persist updated cartList to localStorage
   localStorage.setItem("Cart_Data", JSON.stringify(newCartList));
+
   return { cartList: newCartList, cartMap: newCartMap };
 }
+
 
 const CartContextProvider = ({ children }) => {
   let storedCartList = [];
@@ -56,7 +61,7 @@ const CartContextProvider = ({ children }) => {
       storedCartList = parsedData;
     }
   } catch (e) {
-    //console.error("Error parsing stored cart data", e);
+    console.error("Error parsing stored cart data", e);
   }
 
   // Rebuild cartMap from storedCartList

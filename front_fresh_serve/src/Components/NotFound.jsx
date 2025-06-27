@@ -3,11 +3,6 @@ function NotFound() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-100 px-6 py-24 ">
       <div className="text-center">
-        <p className="text-lg font-semibold text-indigo-600">404</p>
-        <h1 className="mt-4 text-4xl font-bold text-gray-900 sm:text-6xl">Page Not Found</h1>
-        <p className="mt-6 text-lg text-gray-600">
-          Sorry, the page you are looking for does not exist.
-        </p>
         <div className="mt-8 flex justify-center gap-x-4">
           <a
             href="/"
@@ -15,9 +10,7 @@ function NotFound() {
           >
             Go Home
           </a>
-          <a href="/contact" className="text-sm font-medium text-indigo-600 hover:underline">
-            Contact Support
-          </a>
+            You are viewing the error because Backend Server is turnedoff due to non usage to save carbon footprints. Please contact <a href="mailto:kashyaphitesh456@gmail.com">kashyaphitesh456@gmail.com</a> or <a href="tel:+919816567367">+91-9816567367</a> to inform & turnon the MySql server. Thank You.
         </div>
       </div>
     </main>

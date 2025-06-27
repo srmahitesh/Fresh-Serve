@@ -31,7 +31,7 @@ const Header = () => {
   // Fetch address from Ola Maps API
   const fetchAddress = async (latitude, longitude) => {
     try {
-
+      console.log(import.meta.env.VITE_OLA_API_KEY);
       const response = await fetch(
         `https://api.olamaps.io/places/v1/reverse-geocode?latlng=${latitude},${longitude}&api_key=${import.meta.env.VITE_OLA_API_KEY}`
       );
@@ -74,15 +74,7 @@ const Header = () => {
           </select>
         </div>
 
-        {/* Search Box */}
-        <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input
-            type="search"
-            className="form-control"
-            placeholder="Search..."
-            aria-label="Search"
-          />
-        </form>
+
         <CartLogo/>
       </div>
     </header>
