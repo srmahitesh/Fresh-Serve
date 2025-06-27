@@ -7,6 +7,7 @@
     "start": "vite dev",
     "dev": "vite",
     "build": "vite build",
+    "build-with-legacy": "npm install --legacy-peer-deps && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "postinstall": "vite build"
